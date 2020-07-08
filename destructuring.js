@@ -22,7 +22,7 @@ var carDetails = {
 */
 
 //Code Here
-
+const {color, make, model, year} = carDetails;
 
 
 ////////// PROBLEM 2 //////////
@@ -33,9 +33,13 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
+let testObj = { 
+  firstName: "Jeffrey", lastName: "McDude", title: "Monster Hunter"
+}
+
 function greeting( obj ) {
   //Code Here
-  
+  let { firstName, lastName, title } = obj
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -54,8 +58,10 @@ function greeting( obj ) {
 */
 
 //Code Here
-
-
+function totalPopulation(obj){
+  let { utah, california, texas, arizona } = obj;
+  return  [utah, california, texas, arizona].reduce((num1, num2) => num1 + num2)
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -68,7 +74,10 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+let ingredients = (obj) => {
+  let {carb, fat, protein} = obj;
+  return [carb, fat, protein]
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -86,7 +95,9 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+let largeNumbers = ( {first, second, third}) => {
+  return [first, second, third].reduce((a,b) => (a<b) ? a : b)
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -99,4 +110,16 @@ function greeting( obj ) {
 
 //Code Here
 
+let numberGroups = (obj) => {
+  let {a, b, c} = obj;
+  return [a,b,c].reduce( (arr1, arr2) => (arr1.length > arr2.length) ? arr1 : arr2)
+}
 
+// let test1 = [1,2,3,4];
+// let test2 = ['ab', 'ba', true];
+// let test3 = [{one: 1}]
+
+// testObj = {a: test1, b: test2, c: test3}
+
+// console.log(numberGroups(testObj))
+// > [ 1, 2, 3, 4 ]
