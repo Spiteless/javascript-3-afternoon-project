@@ -41,9 +41,11 @@
 
 function showValues( obj ) {
   //Code Here
+  let outStr = ""
+  for (val in obj){
+    outstr += obj[val]
+  }
 }
-
-
 
 ////////// PROBLEM 2 //////////
 
@@ -55,7 +57,11 @@ function showValues( obj ) {
 
 //Code Here
 
-
+let greaterThan10 = (obj) => {
+  for(var val in obj){
+    (obj[val] > 10) ? obj[val] = 0 : null
+  }
+}
 
 ////////// PROBLEM 3 //////////
 
@@ -67,6 +73,16 @@ function showValues( obj ) {
 
 //Code Here
 
+// testDouble = {one: 1, seventyFive: 75}
+
+let double = (obj) => {
+  for (key in obj) {
+    obj[key] *= 2
+  }
+  return obj
+}
+
+// console.log(double(testDouble))
 
 
 ////////// PROBLEM 4 //////////
@@ -81,7 +97,16 @@ function showValues( obj ) {
 
 //Code Here
 
+let secrets = (obj) => {
+  output = "";
+  for (prop in obj) {
+    if (prop.slice(0,2) === "sh") { output += obj[prop] }
+  }
+  return output
+}
 
+// testobj = {sheen: "A Lady ", shooter: "shot the ", mayor: "Boss", sheriff: "chief of police"}
+// console.log(secrets(testobj))
 
 /* 
   Sometimes it's needed to delete object properties. 
@@ -112,6 +137,10 @@ function showValues( obj ) {
 
 //Code Here
 
+let removePassword = (obj) => {
+  delete obj['password']
+  return obj
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -130,8 +159,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+let deleteBigNumber = (obj) => {
+  for (key in obj) {
+    (obj[key] > 100) ? delete obj[key] : null
+  }
+  return obj
+}
 
-
+// console.log(deleteBigNumber(deleteTheBigNumbers))
 
 ////////// PROBLEM 7 //////////
 
@@ -143,8 +178,16 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+let startsWithK = (obj) => {
+  for (key in obj) {
+    (key[0] === "K" ) ? delete obj[key] : null
+  }
+  return obj
+}
 
-
+// testRemoveK = {Killer: 'doggo', Kangaroo: 'hunter', k: 'lowercase', Looper: 'A movie'}
+// console.log(startsWithK(testRemoveK))
+// { k: 'lowercase', Looper: 'A movie' }
 
 ////////// PROBLEM 8 //////////
 
@@ -159,4 +202,18 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
+let hiddenTreasure = (obj) => {
+  for (key in obj) {
+    (!obj[key].includes('treasure')) ? delete obj[key] : null
+  }
+  return obj
+}
 
+// testTreasure = {
+//   Killer: 'doggo treasure',
+//   Kangaroo: 'hunter likes shiny things',
+//   k: 'lowercase trea treas treasur',
+//   Looper: 'treasure treasure treasure treasure treasure'
+// }
+
+// // console.log(hiddenTreasure(testTreasure))
