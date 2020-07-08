@@ -217,3 +217,6 @@ let hiddenTreasure = (obj) => {
 // }
 
 // // console.log(hiddenTreasure(testTreasure))
+// 
+// 
+//
