@@ -51,8 +51,18 @@ var employees = [
 */
 
 //Code Here
-
-
+const employeeUpdater = () => {
+  newArray = [];
+  for (var index in employees){
+    let employee = employees[index];
+    if (employee.firstName === "Lorie") {employee['department'] = 'HR'}
+    if (employee.firstName !== "Theo") {
+      newArray.push(employee)
+    }
+  }
+  return newArray;
+}
+employees = employeeUpdater()
 
 ////////// PROBLEM 2 //////////
 
@@ -69,7 +79,15 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-
+function removeDuplicates(){
+  let arr1 = workplaceAccidents;
+  let arr2 = []
+  for (index in arr1){
+    let val = arr1[index]
+    if (!arr2.includes(val)) {arr2.push(val)}
+  }
+  return arr2
+}
 
 
 ////////// PROBLEM 3 //////////

@@ -41,10 +41,11 @@
 
 function showValues( obj ) {
   //Code Here
-  let outStr = ""
-  for (val in obj){
+  let outstr = ""
+  for (var val in obj){
     outstr += obj[val]
   }
+  return outstr
 }
 
 ////////// PROBLEM 2 //////////
@@ -58,9 +59,11 @@ function showValues( obj ) {
 //Code Here
 
 let greaterThan10 = (obj) => {
-  for(var val in obj){
+  for(let val in obj){
+    // console.log(val)
     (obj[val] > 10) ? obj[val] = 0 : null
   }
+  return obj
 }
 
 ////////// PROBLEM 3 //////////
@@ -166,7 +169,7 @@ let deleteBigNumber = (obj) => {
   return obj
 }
 
-// console.log(deleteBigNumber(deleteTheBigNumbers))
+console.log(deleteBigNumber(deleteTheBigNumbers))
 
 ////////// PROBLEM 7 //////////
 
@@ -180,7 +183,7 @@ let deleteBigNumber = (obj) => {
 //Code Here
 let startsWithK = (obj) => {
   for (key in obj) {
-    (key[0] === "K" ) ? delete obj[key] : null
+    (key[0] === "k" ) ? delete obj[key] : null
   }
   return obj
 }
